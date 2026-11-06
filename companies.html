@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Companies - SafarGuide</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        .company-header {
+            padding: 1.5rem;
+            color: white;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .company-header-daewoo { background: #0057A0; }
+        .company-header-faisal { background: #D4262C; }
+        .company-header-khan { background: #2E7D32; }
+        .company-header-niazi { background: #FF6F00; }
+        .company-header-alsaif { background: #5C6BC0; }
+        .company-header-mashallah { background: #00897B; }
+        
+        .company-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .company-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .company-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 0 0 12px 12px;
+        }
+        .amenities-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .amenity-badge {
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        /* Table styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .comparison-table th {
+            background: #115E3D;
+            color: white;
+        }
+        .comparison-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .booking-section {
+            background: #115E3D;
+            color: white;
+            padding: 4rem 0;
+            border-radius: 24px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        .booking-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            padding: 0 2rem;
+        }
+        .booking-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar" data-transparent="false">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🚌</span>
+          <span class="logo-text">SafarGuide</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="timings.html" class="nav-link">Timings</a></li>
+          <li><a href="route.html" class="nav-link">Route Map</a></li>
+          <li><a href="companies.html" class="nav-link active">Companies</a></li>
+          <li><a href="guide.html" class="nav-link">Travel Guide</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="page-header bg-light text-center py-5 mt-5">
+        <div class="container animate-on-scroll">
+            <h1 class="display-4 font-weight-bold">Bus Companies</h1>
+            <p class="lead font-urdu mt-3">Sukkur-Karachi route ki tamam bus companies — compare karein aur best chunein</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        
+        <section class="stagger-children grid-2">
+            
+            <!-- Daewoo Express -->
+            <article class="company-card animate-on-scroll" id="daewoo">
+                <div class="company-header company-header-daewoo">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚌</span> Daewoo Express</h3>
+                        <small>Est. 1997 | daewoo.com.pk</small>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 4.5</div>
+                        <small>(2,840 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Pakistan ka sabse mashhoor luxury bus service. Gold class mein behtareen comfort.</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Standard (PKR 2,400 - 2,800)<br>
+                        Gold Class (PKR 3,500 - 4,200)
+                    </div>
+                    <div class="mb-3">
+                        <strong>Terminals:</strong><br>
+                        <i class="fas fa-map-marker-alt text-primary"></i> Sukkur: Daewoo Terminal, Sukkur Bypass<br>
+                        <i class="fas fa-map-marker-alt text-primary"></i> Karachi: Sohrab Goth Terminal, M-9
+                    </div>
+                    <div>
+                        <strong>Night Departures:</strong> 9:00 PM, 10:30 PM, 12:00 AM
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                        <span class="amenity-badge">📶 WiFi</span>
+                        <span class="amenity-badge">🔌 Charging</span>
+                        <span class="amenity-badge">🎬 Entertainment</span>
+                        <span class="amenity-badge">🥤 Refreshments</span>
+                        <span class="amenity-badge">🦵 Legroom</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=daewoo" class="btn btn-sm btn-outline-primary">View Timings</a>
+                    <a href="tel:111-007-008" class="font-weight-bold"><i class="fas fa-phone"></i> 111-007-008</a>
+                </div>
+            </article>
+
+            <!-- Faisal Movers -->
+            <article class="company-card animate-on-scroll" id="faisal">
+                <div class="company-header company-header-faisal">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚍</span> Faisal Movers</h3>
+                        <small>Est. 1994 | faisalmovers.com</small>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 4.3</div>
+                        <small>(3,120 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Pakistan ka sabse bada bus network. Sleeper class mein full bed milta hai!</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Executive (PKR 2,400 - 2,800)<br>
+                        Super Exec (PKR 3,200 - 3,800)<br>
+                        Sleeper (PKR 4,500 - 5,500)
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                        <span class="amenity-badge">📶 WiFi</span>
+                        <span class="amenity-badge">🔌 Charging</span>
+                        <span class="amenity-badge">🎬 Entertainment</span>
+                        <span class="amenity-badge">🥤 Refreshments</span>
+                        <span class="amenity-badge">🛏️ Sleeper</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=faisal" class="btn btn-sm btn-outline-primary">View Timings</a>
+                    <a href="tel:111-22-44-88" class="font-weight-bold"><i class="fas fa-phone"></i> 111-22-44-88</a>
+                </div>
+            </article>
+
+            <!-- Khan Movers -->
+            <article class="company-card animate-on-scroll" id="khan">
+                <div class="company-header company-header-khan">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚐</span> Khan Movers</h3>
+                        <small>Est. 2005</small>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 4.0</div>
+                        <small>(1,560 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Affordable aur comfortable. Best value for money.</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Executive (PKR 2,000 - 2,500)<br>
+                        Business (PKR 2,800 - 3,500)
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                        <span class="amenity-badge">🔌 Charging</span>
+                        <span class="amenity-badge">🦵 Legroom</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=khan" class="btn btn-sm btn-outline-primary">View Timings</a>
+                    <a href="tel:0311-115-4261" class="font-weight-bold"><i class="fas fa-phone"></i> 0311-115-4261</a>
+                </div>
+            </article>
+
+            <!-- Niazi Express -->
+            <article class="company-card animate-on-scroll" id="niazi">
+                <div class="company-header company-header-niazi">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚌</span> Niazi Express</h3>
+                        <small>Est. 1990 | niaziexpress.com.pk</small>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 4.1</div>
+                        <small>(1,890 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Long-distance travel ka experienced operator. Reliable service.</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Standard (PKR 2,200 - 2,600)<br>
+                        Executive (PKR 2,800 - 3,200)
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                        <span class="amenity-badge">🔌 Charging</span>
+                        <span class="amenity-badge">🥤 Refreshments</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=niazi" class="btn btn-sm btn-outline-primary">View Timings</a>
+                    <a href="tel:111-22-99-99" class="font-weight-bold"><i class="fas fa-phone"></i> 111-22-99-99</a>
+                </div>
+            </article>
+
+            <!-- Al-Saif Coach -->
+            <article class="company-card animate-on-scroll" id="alsaif">
+                <div class="company-header company-header-alsaif">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚐</span> Al-Saif Coach</h3>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 3.8</div>
+                        <small>(980 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Budget-friendly. Zyada departures available. Sabse sasta option.</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Standard AC (PKR 1,500 - 2,200)
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=alsaif" class="btn btn-sm btn-outline-primary">View Timings</a>
+                </div>
+            </article>
+
+            <!-- Mashallah Coach -->
+            <article class="company-card animate-on-scroll" id="mashallah">
+                <div class="company-header company-header-mashallah">
+                    <div>
+                        <h3 class="m-0"><span class="logo-icon">🚐</span> Mashallah Coach</h3>
+                    </div>
+                    <div class="text-right">
+                        <div class="rating">⭐ 3.7</div>
+                        <small>(720 reviews)</small>
+                    </div>
+                </div>
+                <div class="company-body">
+                    <p class="font-urdu mb-3">Sasti aur reliable local coach. Short aur long dono ke liye.</p>
+                    <div class="mb-3">
+                        <strong>Tiers & Prices:</strong><br>
+                        Standard AC (PKR 1,500 - 2,000)
+                    </div>
+                    <div class="amenities-row">
+                        <span class="amenity-badge">❄️ AC</span>
+                    </div>
+                </div>
+                <div class="company-footer">
+                    <a href="timings.html?company=mashallah" class="btn btn-sm btn-outline-primary">View Timings</a>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Quick Comparison Table -->
+        <section class="mt-5 animate-on-scroll">
+            <h2 class="text-center mb-4">Quick Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Price Range (PKR)</th>
+                            <th>Service Tiers</th>
+                            <th>Rating</th>
+                            <th>Amenities Count</th>
+                            <th>Night Departures</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Daewoo Express</strong></td>
+                            <td>2,400 - 4,200</td>
+                            <td>Standard, Gold Class</td>
+                            <td>⭐ 4.5</td>
+                            <td>6</td>
+                            <td>3+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Faisal Movers</strong></td>
+                            <td>2,400 - 5,500</td>
+                            <td>Exec, Super Exec, Sleeper</td>
+                            <td>⭐ 4.3</td>
+                            <td>6</td>
+                            <td>4+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Khan Movers</strong></td>
+                            <td>2,000 - 3,500</td>
+                            <td>Executive, Business</td>
+                            <td>⭐ 4.0</td>
+                            <td>3</td>
+                            <td>2+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Niazi Express</strong></td>
+                            <td>2,200 - 3,200</td>
+                            <td>Standard, Executive</td>
+                            <td>⭐ 4.1</td>
+                            <td>3</td>
+                            <td>3+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Al-Saif Coach</strong></td>
+                            <td>1,500 - 2,200</td>
+                            <td>Standard AC</td>
+                            <td>⭐ 3.8</td>
+                            <td>1</td>
+                            <td>Frequent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mashallah Coach</strong></td>
+                            <td>1,500 - 2,000</td>
+                            <td>Standard AC</td>
+                            <td>⭐ 3.7</td>
+                            <td>1</td>
+                            <td>Frequent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Online Booking Section -->
+        <section class="booking-section glass-bg animate-on-scroll">
+            <h2 class="font-urdu">Online Ticket Book Karein</h2>
+            <p class="mb-4">Ghar bethe aaram se apni seat reserve karein.</p>
+            <div class="booking-cards stagger-children">
+                <div class="booking-card animate-on-scroll">
+                    <h3>Bookme.pk</h3>
+                    <p class="font-urdu">Pakistan ka #1 bus booking platform. Sab se zyada options.</p>
+                    <a href="https://bookme.pk" target="_blank" class="btn btn-light mt-3">Visit Website</a>
+                </div>
+                <div class="booking-card animate-on-scroll">
+                    <h3>Bookkaru.com</h3>
+                    <p class="font-urdu">Multiple companies available for comparison and booking.</p>
+                    <a href="https://bookkaru.com" target="_blank" class="btn btn-light mt-3">Visit Website</a>
+                </div>
+                <div class="booking-card animate-on-scroll">
+                    <h3>Direct Company Sites</h3>
+                    <p class="font-urdu">Daewoo.com.pk aur FaisalMovers.com se direct book karein.</p>
+                    <a href="#daewoo" class="btn btn-light mt-3">View Links</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="flex" style="gap: 0.5rem; margin-bottom: 0.5rem; display: flex; align-items: center;">
+              <span class="logo-icon" style="width:36px;height:36px;font-size:1.1rem; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%;">🚌</span>
+              <span class="logo-text" style="font-weight: 700; font-size: 1.2rem;">SafarGuide</span>
+            </div>
+            <p class="font-urdu">Sukkur se Karachi tak ka safar — ab plan karna hua aasan. Sab buses, timings, aur fares ek jagah.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="timings.html">Bus Timings</a></li>
+              <li><a href="route.html">Route Map</a></li>
+              <li><a href="companies.html">Bus Companies</a></li>
+              <li><a href="guide.html">Travel Guide</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Bus Companies</h4>
+            <ul>
+              <li><a href="companies.html#daewoo">Daewoo Express</a></li>
+              <li><a href="companies.html#faisal">Faisal Movers</a></li>
+              <li><a href="companies.html#khan">Khan Movers</a></li>
+              <li><a href="companies.html#niazi">Niazi Express</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="mailto:info@safarguide.pk">info@safarguide.pk</a></li>
+              <li><a href="tel:+923001234567">0300-123-4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="font-urdu">&copy; 2026 SafarGuide. Sab haqooq mehfooz hain.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

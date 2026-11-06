@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide - SafarGuide</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 3rem 0;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            z-index: -1;
+        }
+        .timeline-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: #115E3D;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem auto;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: #f8fafc;
+            border-left: 5px solid #F5A623;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .tip-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .tip-card li { margin-bottom: 0.5rem; }
+        
+        .terminal-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .checklist {
+            background: #115E3D;
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+        
+        /* Accordion CSS */
+        .accordion {
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .active, .accordion:hover {
+            background-color: #f8fafc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            font-size: 1rem;
+            color: #555;
+        }
+        .panel-content { padding: 15px 0; }
+        .accordion::after {
+            content: '\002B';
+            color: #115E3D;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-left: 5px;
+        }
+        .active::after {
+            content: "\2212";
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            margin: 4rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar" data-transparent="false">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🚌</span>
+          <span class="logo-text">SafarGuide</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="timings.html" class="nav-link">Timings</a></li>
+          <li><a href="route.html" class="nav-link">Route Map</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="guide.html" class="nav-link active">Travel Guide</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="page-header text-center py-5 mt-5">
+        <div class="container animate-on-scroll">
+            <h1 class="display-4 font-weight-bold">Travel Guide</h1>
+            <p class="lead font-urdu mt-3">Sukkur-Karachi safar ki complete guide — pehli baar ho ya dasween, sab kuch yahan hai</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        
+        <!-- Safar Kaise Plan Karein -->
+        <section class="animate-on-scroll">
+            <h2 class="text-center mb-4">Safar Kaise Plan Karein</h2>
+            <div class="timeline stagger-children">
+                <div class="timeline-step animate-on-scroll">
+                    <div class="step-icon">🎟️</div>
+                    <h3 class="font-urdu">1. Ticket Book Karein</h3>
+                    <p class="font-urdu">Online (Bookme.pk) ya terminal pe ja kar advance ticket book karwayein.</p>
+                </div>
+                <div class="timeline-step animate-on-scroll">
+                    <div class="step-icon">🧳</div>
+                    <h3 class="font-urdu">2. Tayyari Karein</h3>
+                    <p class="font-urdu">CNIC, charger, garam kapra, aur pani apne paas zaroor rakhein.</p>
+                </div>
+                <div class="timeline-step animate-on-scroll">
+                    <div class="step-icon">🚌</div>
+                    <h3 class="font-urdu">3. Terminal Pahunchein</h3>
+                    <p class="font-urdu">Departure se kam az kam 30 minute pehle terminal pahunch jayein.</p>
+                </div>
+                <div class="timeline-step animate-on-scroll">
+                    <div class="step-icon">😴</div>
+                    <h3 class="font-urdu">4. Enjoy the Ride</h3>
+                    <p class="font-urdu">Aaram se so jayein, Moro pe chai piyein, subah Karachi pahunch jayein.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Tips -->
+        <section class="mt-5 pt-4 animate-on-scroll">
+            <h2 class="text-center mb-4">Expert Travel Tips</h2>
+            <div class="grid-2 stagger-children">
+                
+                <div class="tip-card animate-on-scroll">
+                    <h3>📋 Safar se Pehle</h3>
+                    <ul class="font-urdu">
+                        <li>Hamesha advance booking karein, khaas tor pe weekend par.</li>
+                        <li>Safar se pehle halka khana khayein taake tabiyat kharab na ho.</li>
+                        <li>Apna CNIC or ticket print/digital hamesha pas rakhein.</li>
+                        <li>Ghar se nikalne se pehle terminal ki location verify karlein.</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card animate-on-scroll" style="border-left-color: #0F172A;">
+                    <h3>🌙 Raat ka Safar</h3>
+                    <ul class="font-urdu">
+                        <li>Raat ke safar mein neck pillow aur eye mask bohat kaam aata hai.</li>
+                        <li>Raat ko bus mein AC tez hota hai, ek chadar ya jacket zaroor sath rakhein.</li>
+                        <li>Keemti saman apne paas seat pe rakhein, trunk mein nahi.</li>
+                        <li>Alarm set karlein taake arrival time se pehle uth sakein.</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card animate-on-scroll" style="border-left-color: #2E7D32;">
+                    <h3>💰 Budget Tips</h3>
+                    <ul class="font-urdu">
+                        <li>Off-peak times mein ticket thora sasta mil jata hai.</li>
+                        <li>Online booking platforms (Bookme) pe aksar discounts hote hain.</li>
+                        <li>Pani aur snacks ghar se le kar jayein, rest stops pe mehnga milta hai.</li>
+                        <li>Regular travelers bus companies ke loyalty cards banwa lein.</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card animate-on-scroll" style="border-left-color: #115E3D;">
+                    <h3>😌 Comfort Tips</h3>
+                    <ul class="font-urdu">
+                        <li>Aage ki seats zyada comfortable hoti hain (bumps kam feel hote hain).</li>
+                        <li>Aisle seat lene se pair (legs) stretch karne mein aasani hoti hai.</li>
+                        <li>Noise-cancelling headphones ya earplugs sukoon ki neend ke liye best hain.</li>
+                        <li>Safar ke doran stretch zaroor karein jab bus rest stop pe ruke.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Terminal Locations -->
+        <section class="mt-5 pt-4 animate-on-scroll">
+            <h2 class="text-center mb-4">Terminal Locations</h2>
+            <div class="grid-2 stagger-children">
+                <div class="terminal-card animate-on-scroll">
+                    <h3>📍 Sukkur Terminals</h3>
+                    <hr>
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="mb-3">
+                            <strong>Daewoo Terminal</strong><br>
+                            <span class="text-muted">Sukkur Bypass Road, Sukkur</span>
+                        </li>
+                        <li class="mb-3">
+                            <strong>Faisal Movers Terminal</strong><br>
+                            <span class="text-muted">Bypass Road, near IBA Sukkur</span>
+                        </li>
+                        <li>
+                            <strong>General Bus Stand</strong><br>
+                            <span class="text-muted">For local coaches (Mashallah, Al-Saif)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="terminal-card animate-on-scroll">
+                    <h3>📍 Karachi Terminals</h3>
+                    <hr>
+                    <ul style="list-style: none; padding: 0;">
+                        <li class="mb-3">
+                            <strong>Sohrab Goth Terminal</strong><br>
+                            <span class="text-muted">M-9 Motorway Toll Plaza, Karachi (Daewoo/Faisal)</span>
+                        </li>
+                        <li class="mb-3">
+                            <strong>Taj Complex / Saddar</strong><br>
+                            <span class="text-muted">Main city terminal for various coaches</span>
+                        </li>
+                        <li>
+                            <strong>Cantt Station Area</strong><br>
+                            <span class="text-muted">For some executive services and drop-offs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kya Lekar Jayein -->
+        <section class="checklist animate-on-scroll">
+            <div class="text-center">
+                <h2>Kya Lekar Jayein? (Packing Checklist)</h2>
+                <p class="font-urdu mt-2">Safar pe nikalne se pehle in cheezon ko check karlein:</p>
+            </div>
+            <div class="checklist-grid font-urdu">
+                <div class="check-item">✅ CNIC (Identity Card)</div>
+                <div class="check-item">✅ Phone + Charger + Power Bank</div>
+                <div class="check-item">✅ Pani ki bottle</div>
+                <div class="check-item">✅ Halka garam kapra (AC ke liye)</div>
+                <div class="check-item">✅ Headphones</div>
+                <div class="check-item">✅ Neck pillow (recommended)</div>
+                <div class="check-item">✅ Chhota towel</div>
+                <div class="check-item">✅ Kuch khaane ko (biscuits/chips)</div>
+                <div class="check-item">✅ Cash (chhote note)</div>
+                <div class="check-item">✅ Dawai (agar zaroorat ho)</div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mt-5 pt-4 animate-on-scroll">
+            <h2 class="text-center mb-4">Aksar Pooche Gaye Sawalaat (FAQs)</h2>
+            <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden;">
+                
+                <button class="accordion font-urdu">Sukkur se Karachi tak bus ka safar kitni der ka hota hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Normally, Sukkur se Karachi ka safar bus ke zariye 6 se 7 ghante mein tay hota hai (via M-5 & M-9 motorway). Lekin traffic aur rest stops ke mutabiq waqt thora aage peeche ho sakta hai.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Kya online ticket book karwana safe aur behtar hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Jee han, online booking (Bookme.pk ya official websites ke zariye) bilkul safe hai. Is se aap last-minute rush se bach sakte hain aur apni pasand ki seat chunn sakte hain.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Kya safar ke doran khana peena milta hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Daewoo, Faisal Movers, aur Niazi jaisi achi buses mein snacks aur pani serve kiya jata hai. Iske ilawa bus Moro ya kisi aur rest area pe 20-30 minute ke liye rukti hai jahan se aap khana kha sakte hain.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Sukkur-Karachi ke liye sabse best bus konsi hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Comfort aur luxury ke liye Daewoo Express aur Faisal Movers (Sleeper/Business class) best maani jati hain. Agar budget friendly chahiye to Al-Saif ya local coaches use ki ja sakti hain.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Kya buses mein WiFi aur mobile charging hoti hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Aksar standard-plus aur luxury buses mein USB charging ports har seat par majood hote hain. WiFi ki sahulat bhi di jati hai lekin highway par network issue ki wajah se internet slow ho sakta hai.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Kya ladies ke liye safar safe hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Jee han, top bus operators (Daewoo, Faisal Movers) family aur single ladies ke liye bohat safe hain. In terminals par security aur waiting rooms majood hote hain.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Bachon (kids) ka ticket half lagta hai ya full?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Aksar companies mein 3 ya 4 saal se kam umer ke bache (jo godh mein bethein) free travel karte hain. Agar bache ke liye alag seat leni ho toh full ya half ticket (policy ke mutabiq) charge hota hai.
+                    </div>
+                </div>
+
+                <button class="accordion font-urdu">Kya saman (luggage) ki koi limit hai?</button>
+                <div class="panel">
+                    <div class="panel-content font-urdu">
+                        Aksar premium bus services 20-30 KG tak saman allow karti hain. Agar saman us se zyada ho, toh extra charges dene par sakte hain (per KG ke hisab se).
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section animate-on-scroll">
+            <h2 class="mb-3 font-urdu">Timings dekhein aur apni bus chunein</h2>
+            <p class="mb-4">Tamam companies ki updated timings ek click ki doori par.</p>
+            <a href="timings.html" class="btn btn-primary btn-lg" style="background-color: #115E3D; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600;">Check Bus Timings</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="flex" style="gap: 0.5rem; margin-bottom: 0.5rem; display: flex; align-items: center;">
+              <span class="logo-icon" style="width:36px;height:36px;font-size:1.1rem; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%;">🚌</span>
+              <span class="logo-text" style="font-weight: 700; font-size: 1.2rem;">SafarGuide</span>
+            </div>
+            <p class="font-urdu">Sukkur se Karachi tak ka safar — ab plan karna hua aasan. Sab buses, timings, aur fares ek jagah.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="timings.html">Bus Timings</a></li>
+              <li><a href="route.html">Route Map</a></li>
+              <li><a href="companies.html">Bus Companies</a></li>
+              <li><a href="guide.html">Travel Guide</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Bus Companies</h4>
+            <ul>
+              <li><a href="companies.html#daewoo">Daewoo Express</a></li>
+              <li><a href="companies.html#faisal">Faisal Movers</a></li>
+              <li><a href="companies.html#khan">Khan Movers</a></li>
+              <li><a href="companies.html#niazi">Niazi Express</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="mailto:info@safarguide.pk">info@safarguide.pk</a></li>
+              <li><a href="tel:+923001234567">0300-123-4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="font-urdu">&copy; 2026 SafarGuide. Sab haqooq mehfooz hain.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function initAccordion() {
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            }
+        }
+        document.addEventListener("DOMContentLoaded", initAccordion);
+    </script>
+</body>
+</html>

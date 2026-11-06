@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Map - SafarGuide</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar" data-transparent="false">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🚌</span>
+          <span class="logo-text">SafarGuide</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="timings.html" class="nav-link">Timings</a></li>
+          <li><a href="route.html" class="nav-link">Route Map</a></li>
+          <li><a href="companies.html" class="nav-link">Companies</a></li>
+          <li><a href="guide.html" class="nav-link">Travel Guide</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="page-header stagger-children text-center">
+        <div class="container animate-on-scroll">
+            <h1>Route Map — Sukkur to Karachi</h1>
+            <p class="subtitle font-urdu">485 km ka poora naqsha — har stop, har sheher, sab kuch</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Route Overview Banner -->
+        <section class="container py-4">
+            <div class="route-overview glass-bg flex justify-between wrap text-center p-4 rounded animate-on-scroll">
+                <div class="stat-box">
+                    <div class="stat-icon text-primary text-3xl mb-2"><i class="fas fa-route"></i></div>
+                    <div class="stat-value font-bold text-xl">485 km</div>
+                    <div class="stat-label text-muted">Total Distance</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon text-primary text-3xl mb-2"><i class="fas fa-clock"></i></div>
+                    <div class="stat-value font-bold text-xl">7.5 - 8.5 hrs</div>
+                    <div class="stat-label text-muted">Estimated Time</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon text-primary text-3xl mb-2"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="stat-value font-bold text-xl">8 cities</div>
+                    <div class="stat-label text-muted">Major Stops</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon text-primary text-3xl mb-2"><i class="fas fa-road"></i></div>
+                    <div class="stat-value font-bold text-xl">N-5 + M-9</div>
+                    <div class="stat-label text-muted">Highway</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exploded View Section -->
+        <section class="exploded-view-section bg-light py-5">
+            <div class="container text-center mb-4 animate-on-scroll">
+                <h2 class="font-urdu">Scroll karein aur route explore karein</h2>
+                <p class="font-urdu text-muted">Neeche scroll karte jayein — har stop dikhega detail ke saath</p>
+            </div>
+            
+            <div id="routeExplodedView" class="container relative">
+                <!-- Dynamically populated by route-animation.js -->
+            </div>
+        </section>
+
+        <!-- Route Tips Section -->
+        <section class="container py-5 stagger-children">
+            <h2 class="text-center mb-4 font-urdu animate-on-scroll">Safar Ke Liye Tips</h2>
+            <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 gap-4">
+                <div class="card p-4 glass-blur text-center animate-on-scroll">
+                    <div class="icon text-3xl mb-2">🚌</div>
+                    <h3 class="mb-2">Best Time</h3>
+                    <p class="font-urdu text-sm">Raat 9-10 baje ki buses sabse popular — subah 5-6 baje pahunch jaoge</p>
+                </div>
+                <div class="card p-4 glass-blur text-center animate-on-scroll">
+                    <div class="icon text-3xl mb-2">☕</div>
+                    <h3 class="mb-2">Moro Break</h3>
+                    <p class="font-urdu text-sm">Moro pe 30-45 min ka break — chai, khaana, washroom sab milta hai</p>
+                </div>
+                <div class="card p-4 glass-blur text-center animate-on-scroll">
+                    <div class="icon text-3xl mb-2">🛣️</div>
+                    <h3 class="mb-2">M-9 Motorway</h3>
+                    <p class="font-urdu text-sm">Hyderabad se Karachi tak M-9 motorway — smooth aur fast ride</p>
+                </div>
+                <div class="card p-4 glass-blur text-center animate-on-scroll">
+                    <div class="icon text-3xl mb-2">⏱️</div>
+                    <h3 class="mb-2">Karachi Entry</h3>
+                    <p class="font-urdu text-sm">Subah rush hour mein Sohrab Goth se city centre 30-45 min extra lagta hai</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner py-5 bg-primary text-white text-center">
+            <div class="container animate-on-scroll">
+                <h2 class="mb-3 font-urdu">Timing dekhein aur apni bus chun lein</h2>
+                <a href="timings.html" class="btn btn-light btn-lg font-bold">See Timings <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="flex align-center" style="gap: 0.5rem; margin-bottom: 0.5rem;">
+              <span class="logo-icon" style="width:36px;height:36px;font-size:1.1rem;display:flex;align-items:center;justify-content:center;background:white;border-radius:50%;color:var(--primary);">🚌</span>
+              <span class="logo-text font-bold text-lg">SafarGuide</span>
+            </div>
+            <p class="font-urdu">Sukkur se Karachi tak ka safar — ab plan karna hua aasan. Sab buses, timings, aur fares ek jagah.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="timings.html">Bus Timings</a></li>
+              <li><a href="route.html">Route Map</a></li>
+              <li><a href="companies.html">Bus Companies</a></li>
+              <li><a href="guide.html">Travel Guide</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Bus Companies</h4>
+            <ul>
+              <li><a href="companies.html#daewoo">Daewoo Express</a></li>
+              <li><a href="companies.html#faisal">Faisal Movers</a></li>
+              <li><a href="companies.html#khan">Khan Movers</a></li>
+              <li><a href="companies.html#niazi">Niazi Express</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="mailto:info@safarguide.pk">info@safarguide.pk</a></li>
+              <li><a href="tel:+923001234567">0300-123-4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom flex justify-between align-center border-t pt-3 mt-3">
+          <p class="font-urdu">&copy; 2026 SafarGuide. Sab haqooq mehfooz hain.</p>
+          <div class="footer-social flex" style="gap:1rem;">
+            <a href="#" aria-label="Facebook" class="text-xl hover-primary"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp" class="text-xl hover-primary"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Instagram" class="text-xl hover-primary"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/route-animation.js"></script>
+</body>
+</html>

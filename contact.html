@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SafarGuide</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="background: #F8FAFC;">
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar" data-transparent="false" style="background: #0F172A; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🚌</span>
+      <span class="logo-text">SafarGuide</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="timings.html" class="nav-link">Timings</a></li>
+      <li><a href="route.html" class="nav-link">Route Map</a></li>
+      <li><a href="companies.html" class="nav-link">Companies</a></li>
+      <li><a href="guide.html" class="nav-link">Travel Guide</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="page-header" style="background: #1B7A50; color: white; padding: 6rem 0 3rem; text-align: center;">
+    <div class="container animate-on-scroll">
+        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Humse Raabta Karein</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;" class="font-urdu">Koi sawaal ya mashwara? Humein zaroor likhein.</p>
+    </div>
+</header>
+
+<!-- Two Column Layout (Form + Info) -->
+<section class="contact-section py-5" style="padding: 4rem 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+            
+            <!-- LEFT: Contact form -->
+            <div class="contact-form-container animate-on-scroll" style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 1.5rem; color: #0F172A; margin-bottom: 1.5rem; font-weight: 600;">Message Bhejein</h3>
+                <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #475569; font-weight: 500;">Apna Naam</label>
+                        <input type="text" placeholder="Ali Khan" style="width: 100%; padding: 0.75rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Poppins', sans-serif;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #475569; font-weight: 500;">Email ID</label>
+                        <input type="email" placeholder="ali@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Poppins', sans-serif;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #475569; font-weight: 500;">Mouzou (Subject)</label>
+                        <select style="width: 100%; padding: 0.75rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Poppins', sans-serif; background: white;">
+                            <option>General Query</option>
+                            <option>Feedback</option>
+                            <option>Bus Info</option>
+                            <option>Report Error</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; color: #475569; font-weight: 500;">Message</label>
+                        <textarea rows="5" placeholder="Yahan apna paigham likhein..." style="width: 100%; padding: 0.75rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Poppins', sans-serif; resize: vertical;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="background: #1B7A50; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 0.5rem;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- RIGHT: Contact info cards -->
+            <div class="contact-info-container stagger-children" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                
+                <div class="info-card animate-on-scroll" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: #FEF3C7; color: #F5A623; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                        📧
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #0F172A; font-weight: 600;">Email</h4>
+                        <p style="margin: 0; color: #64748B;"><a href="mailto:info@safarguide.pk" style="color: inherit; text-decoration: none;">info@safarguide.pk</a></p>
+                    </div>
+                </div>
+
+                <div class="info-card animate-on-scroll" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: #E0E7FF; color: #3730A3; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                        📞
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #0F172A; font-weight: 600;">Phone</h4>
+                        <p style="margin: 0; color: #64748B;"><a href="tel:03001234567" style="color: inherit; text-decoration: none;">0300-123-4567</a></p>
+                    </div>
+                </div>
+
+                <div class="info-card animate-on-scroll" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: #DCFCE7; color: #166534; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                        📍
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #0F172A; font-weight: 600;">Sukkur Terminal</h4>
+                        <p style="margin: 0; color: #64748B;">Rohri Bypass, Military Road ke qareeb</p>
+                    </div>
+                </div>
+
+                <div class="info-card animate-on-scroll" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <div style="background: #FCE7F3; color: #BE185D; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                        📍
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 0.5rem; color: #0F172A; font-weight: 600;">Karachi Terminal</h4>
+                        <p style="margin: 0; color: #64748B;">Sohrab Goth, Al-Asif Square</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bus Company Helplines Section -->
+<section class="helplines-section py-5" style="background: #0F172A; color: white; padding: 4rem 0;">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll" style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Bus Companies ke Helplines</h2>
+            <p style="color: #94A3B8;">Bar-e-raast (direct) booking ya maloomat ke liye</p>
+        </div>
+
+        <div class="grid stagger-children" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            
+            <div class="helpline-card animate-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #F5A623; margin-bottom: 1rem; font-weight: 600;">Daewoo Express</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt"></i> 111-007-008</p>
+                <a href="https://daewoo.com.pk" target="_blank" style="color: #94A3B8; text-decoration: none; font-size: 0.9rem;">daewoo.com.pk</a>
+            </div>
+
+            <div class="helpline-card animate-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #F5A623; margin-bottom: 1rem; font-weight: 600;">Faisal Movers</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt"></i> 111-22-44-88</p>
+                <a href="https://faisalmovers.com" target="_blank" style="color: #94A3B8; text-decoration: none; font-size: 0.9rem;">faisalmovers.com</a>
+            </div>
+
+            <div class="helpline-card animate-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #F5A623; margin-bottom: 1rem; font-weight: 600;">Khan Movers</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt"></i> 0311-115-4261</p>
+                <a href="#" style="color: #94A3B8; text-decoration: none; font-size: 0.9rem;">-</a>
+            </div>
+
+            <div class="helpline-card animate-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #F5A623; margin-bottom: 1rem; font-weight: 600;">Niazi Express</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt"></i> 111-22-99-99</p>
+                <a href="https://niaziexpress.com.pk" target="_blank" style="color: #94A3B8; text-decoration: none; font-size: 0.9rem;">niaziexpress.com.pk</a>
+            </div>
+
+            <div class="helpline-card animate-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #F5A623; margin-bottom: 1rem; font-weight: 600;">Online Booking</h4>
+                <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe"></i> Bookme.pk</p>
+                <a href="https://bookme.pk" target="_blank" style="color: #94A3B8; text-decoration: none; font-size: 0.9rem;">bookme.pk</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5" style="padding: 5rem 0;">
+    <div class="container" style="max-width: 800px;">
+        <div class="section-header text-center animate-on-scroll" style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem; color: #0F172A; font-weight: 700; margin-bottom: 1rem;">Aam Sawaalaat (FAQs)</h2>
+            <p style="color: #64748B;">Sukkur-Karachi safar ke hawalay se zaroori maloomat</p>
+        </div>
+
+        <div class="accordion stagger-children" id="faqAccordion" style="display: flex; flex-direction: column; gap: 1rem;">
+            
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q1: Sukkur se Karachi ka safar kitni dair ka hai?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Aam tor par bus ko 7 se 8 ghantay lagte hain, depend karta hai ke konsa route liya gaya hai aur kitne stops hain. Motorway (M-5 aur M-9) use karne se waqt kam lagta hai.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q2: Sabse sasti bus konsi hai?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Standard coaches (jaise Al-Saif ya deegar local coaches) ka kiraya taqreeban PKR 1,500 se 1,800 ke darmian hota hai.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q3: Raat ke waqt safar karna kaisa hai?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Raat ka safar kaafi popular aur mehfooz hai kyun ke aap subah Karachi pohanch jatay hain. Faisal Movers aur Daewoo ki night buses bohat aaram-deh hain.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q4: Kya ladies ke liye alag se seats hoti hain?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Haan, takreeban tamam achi companies single ladies ke liye agay ki seats mehfooz rakhti hain. Aap ticket book karte waqt request kar sakte hain.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q5: Online ticket book kaise karein?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Aap Bookme.pk, SastaTicket ya company ki apni app se online tickets easily book kar sakte hain. Payment JazzCash, EasyPaisa ya card se ho sakti hai.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q6: Sukkur mein terminals kahan hain?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Ziada tar barri bus companies ke terminals Rohri Bypass aur Military Road ke ird gird waqay hain. 
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q7: Luggage policy kya hai?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Aam tor par ek musafir ko 20 se 30 kg tak saman le janay ki ijazat hoti hai. Izafi saman par extra charges lag sakte hain.
+                </div>
+            </div>
+
+            <div class="accordion-item animate-on-scroll" style="background: white; border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
+                <button class="accordion-button" style="width: 100%; text-align: left; padding: 1.25rem; background: white; border: none; font-weight: 600; color: #0F172A; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif;">
+                    <span>Q8: Kya safar ke doran khana faraham kiya jata hai?</span>
+                    <i class="fas fa-chevron-down" style="color: #1B7A50;"></i>
+                </button>
+                <div class="accordion-content" style="padding: 0 1.25rem 1.25rem; color: #64748B; display: none;">
+                    Premium services jaise Daewoo Gold ya Faisal Movers mein safar ke doran refreshments (snacks aur drinks) diye jatay hain. Iske ilawa ek rest stop zaroor hota hai jahan aap khana kha sakte hain.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="flex" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center;">
+          <span class="logo-icon" style="width:36px;height:36px;font-size:1.1rem; display: flex; align-items: center; justify-content: center; background: #F5A623; border-radius: 50%;">🚌</span>
+          <span class="logo-text" style="font-weight: 700; font-size: 1.25rem;">SafarGuide</span>
+        </div>
+        <p>Sukkur se Karachi tak ka safar — ab plan karna hua aasan. Sab buses, timings, aur fares ek jagah.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="timings.html">Bus Timings</a></li>
+          <li><a href="route.html">Route Map</a></li>
+          <li><a href="companies.html">Bus Companies</a></li>
+          <li><a href="guide.html">Travel Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bus Companies</h4>
+        <ul>
+          <li><a href="companies.html#daewoo">Daewoo Express</a></li>
+          <li><a href="companies.html#faisal">Faisal Movers</a></li>
+          <li><a href="companies.html#khan">Khan Movers</a></li>
+          <li><a href="companies.html#niazi">Niazi Express</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="mailto:info@safarguide.pk">info@safarguide.pk</a></li>
+          <li><a href="tel:+923001234567">0300-123-4567</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SafarGuide. Sab haqooq mehfooz hain.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+    if(typeof initAccordion === 'function') {
+        initAccordion();
+    } else {
+        // Fallback for accordion functionality just in case
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                const isOpen = content.style.display === 'block';
+                
+                // Close all others
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.style.display = 'none';
+                });
+                document.querySelectorAll('.accordion-button i').forEach(i => {
+                    i.style.transform = 'rotate(0deg)';
+                });
+                
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>
